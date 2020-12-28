@@ -11,7 +11,7 @@
         >
         <span v-else-if="!!winner">
           The Winner is: {{ currentPlayer }}
-          <button @click="restart"></button>
+          <button @click="restart">Play Again</button>
         </span>
         <span v-else-if="stepNumber === 9">
           It's a Draw!
@@ -29,6 +29,7 @@ import Board from './Board.vue';
 export default {
   name: 'Game',
   components: { Board },
+
   data() {
     return {
       squares: Array(9).fill(null),
@@ -37,6 +38,7 @@ export default {
       winner: null,
     };
   },
+
   methods: {
     hasWinner() {
       if (this.winner) return true;

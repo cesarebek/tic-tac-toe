@@ -15,13 +15,17 @@
 
 <script>
 import Square from './Square.vue';
+
 export default {
   name: 'Board',
+
   props: {
     squares: Array,
     winner: Array,
   },
+
   components: { Square },
+
   methods: {
     indexByRow(index, row, max = 3) {
       return row * max + index - (max + 1);
